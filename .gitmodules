@@ -1,3 +1,6 @@
 [submodule "CryptoLibAES-128"]
 	path = CryptoLibAES-128
 	url = https://github.com/ravimalik20/CryptoLibAES-128
+[submodule "CryptoLibSHA-256"]
+	path = CryptoLibSHA-256
+	url = https://github.com/ravimalik20/CryptoLibSHA-256.git
