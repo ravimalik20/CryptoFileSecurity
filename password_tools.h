@@ -40,7 +40,6 @@ char* prepare_password(char *s)
 void hash_password(char *str, unsigned char *pass)
 {	struct hash hs;
 	hs=hash_string(str);
-	print_hash(&hs);
 	char hex_str[65];
 	hash_to_hex_string(&hs,hex_str);
 	unsigned char pwd[17];
