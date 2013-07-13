@@ -47,7 +47,6 @@ void hash_password(char *str, unsigned char *pass)
 	int i;
 	for(i=0;i<16;i++)
 	{	pwd[i]=hex_str[i];
-		printf("%c",pwd[i]);
 	}
 	pwd[16]='\0';
 	for(i=0;i<17;i++)

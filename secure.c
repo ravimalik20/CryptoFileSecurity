@@ -28,18 +28,9 @@ void main(int argc, char* argv[])
 {	FILE *fp_i,*fp_o;
 	fp_i=fopen(argv[2],"rb");
 	fp_o=fopen(argv[4],"wb");
-	//char *pwd;
 	unsigned char pwd[17];	
 	struct block key;	
-	//pwd=prepare_password(argv[3]);
 	hash_password(argv[3],pwd);
-	// Checking the hashed password
-	int i;
-	printf("\nPWD:\n");
-	for(i=0;i<16;i++)
-	{	printf("%c",pwd[i]);
-	}
-	//
 	key=prepare_key(pwd);
 	if(!strcmp(argv[1],"-e"))
 	{	encrypt_file(fp_i,key,fp_o);
