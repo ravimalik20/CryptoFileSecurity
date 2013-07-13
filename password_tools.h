@@ -21,6 +21,7 @@
 
 
 #include<string.h>
+#include"CryptoLibSHA-256/hash_string.h"
 
 char* prepare_password(char *s)
 {	char pwd[17];
@@ -34,4 +35,22 @@ char* prepare_password(char *s)
 	}
 	pwd[16]='\0';
 	return pwd;
+}
+
+void hash_password(char *str, unsigned char *pass)
+{	struct hash hs;
+	hs=hash_string(str);
+	print_hash(&hs);
+	char hex_str[65];
+	hash_to_hex_string(&hs,hex_str);
+	unsigned char pwd[17];
+	int i;
+	for(i=0;i<16;i++)
+	{	pwd[i]=hex_str[i];
+		printf("%c",pwd[i]);
+	}
+	pwd[16]='\0';
+	for(i=0;i<17;i++)
+	{	pass[i]=pwd[i];
+	}
 }
